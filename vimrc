@@ -164,6 +164,7 @@ if has("gui_running")   " Set extra options when running in GUI mode.
     set guitablabel=%M\ %t
 endif
 
+set guifont=Inconsolata:h13
 set encoding=utf8
 
 

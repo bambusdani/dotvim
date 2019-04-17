@@ -1,6 +1,7 @@
 # VIM Dotfiles
 
-Symlink this repo to `~`.
+Symlink `vimrc`to `~/.vimrc`
+Symlink `Ultisnips` to `~/.vim`
 
 Font I use
-`Inconsolata`
+`Inconsolata:h13`

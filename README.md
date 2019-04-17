@@ -5,3 +5,5 @@ and `Ultisnips` to `~/.vim`.
 
 Font I use
 `Inconsolata:h13`
+
+![Sample](sample/sample.png)

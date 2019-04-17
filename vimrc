@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Basics
 Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'

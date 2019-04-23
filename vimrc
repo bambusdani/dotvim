@@ -17,6 +17,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'pgilad/vim-skeletons'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
@@ -54,6 +55,7 @@ filetype plugin indent on    " required
 " 6.6 Tagbar
 " 6.7 Snippets
 " 6.8 Polyglot
+" 6.9 Skeletons
 
 
 "#####################
@@ -307,3 +309,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "~~~~~~~~~~~~~~~~~~~
 " See https://github.com/sheerun/vim-polyglot
 let g:polyglot_disabled = ['latex'] " We use vimtex instead of LaTeX-Box
+
+
+"~~~~~~~~~~~~~~~~~~~~
+"   6.9 Skeletons   ~
+"~~~~~~~~~~~~~~~~~~~~
+let skeletons#autoRegister = 1 " Auto-register for creation of new files

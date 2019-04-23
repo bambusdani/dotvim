@@ -1,7 +1,7 @@
 # VIM Dotfiles
 
 Symlink `vimrc`to `~/.vimrc`  
-and `Ultisnips` to `~/.vim`.
+and `vim/*` to `~/.vim/`.
 
 Font I use
 `Inconsolata:h13`

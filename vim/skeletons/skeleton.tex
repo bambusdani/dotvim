@@ -1,0 +1,96 @@
+\documentclass[a4paper,english,german]{scrartcl}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{fancyhdr}
+\usepackage[colorlinks, linkcolor = black, citecolor = black, filecolor = black, urlcolor = blue]{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage[]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{float}
+
+% TODO Metadata
+%===============
+\newcommand{\Tutor}{${1:Tutor}}                   % Tutor
+\newcommand{\Course}{${2:Tutorium}}               % Tutorium
+\newcommand{\NumExercises}{${3:NumOfExercises}}   % Num of exercises
+\newcommand{\NumAssignment}{${4:NumOfAssignment}} % Num of assignment
+\newcommand{\Deadline}{${5:Deadline}}             % Deadline
+\newcommand{\Students}{${6:Students}}             % Students
+\title{${7:Title}}                                % Title
+
+%===========================================================
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+\pagestyle {fancy}
+\fancyhead[L]{\Tutor}
+\fancyhead[C]{\Course}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{Seite \thepage / \pageref{LastPage} }
+
+\def\header#1#2{
+\begin{center}
+{\Large Übungsblatt #1}
+
+{(Abgabetermin #2)}
+\end{center}
+}
+
+% Marks {{{
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+  \setcounter{punkte}{#2}%
+  \addtocounter{punkte}{-#1}%
+  \stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+  \begin{center}%
+  \begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        \thepunktelistectr &
+      }
+      #2 &  $\Sigma$ \\
+      \hline
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+      \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+      {%
+        &
+      } &\\
+    \end{tabularx}
+  \end{center}
+} % }}}
+
+\begin{document}
+\setlength{\parindent}{0pt}
+
+\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+\begin{minipage}{\linewidth}%
+
+% Student names
+\Students
+\end{minipage} & \begin{minipage}{\linewidth}%
+
+% Num of exercises
+\punkteliste{1}{\NumExercises} %
+\end{minipage}\\
+\end{tabularx}
+
+% Deadline
+\header {\NumAssignment}{\Deadline}
+
+%=================== TODO Begin Exercise ===================
+${0:Begin exercise}
+
+\end{document}

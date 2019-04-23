@@ -317,5 +317,3 @@ let g:polyglot_disabled = ['latex'] " We use vimtex instead of LaTeX-Box
 "   6.9 Skeletons   ~
 "~~~~~~~~~~~~~~~~~~~~
 let skeletons#autoRegister = 1 " Auto-register for creation of new files
-
-let g:tex_flavor = "latex"

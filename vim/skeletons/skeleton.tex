@@ -58,16 +58,16 @@
       {%
         \thepunktelistectr &
       }
-      #2 &  $\Sigma$ \\
+      #2 &  $\Sigma$ \\\
       \hline
       \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
       {%
         &
-      } &\\
+      } &\\\
       \forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
       {%
         &
-      } &\\
+      } &\\\
     \end{tabularx}
   \end{center}
 } % }}}
@@ -84,7 +84,7 @@
 
 % Num of exercises
 \punkteliste{1}{\NumExercises} %
-\end{minipage}\\
+\end{minipage}\\\
 \end{tabularx}
 
 % Deadline

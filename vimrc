@@ -32,6 +32,7 @@ Plugin 'kristijanhusak/vim-hybrid-material'
 
 " Coding
 Plugin 'lervag/vimtex'        " LaTeX
+Plugin 'ensime/ensime-vim'    " Scala
 Plugin 'sheerun/vim-polyglot' " Polyglot
 
 " All of your Plugins must be added before the following line
@@ -56,6 +57,8 @@ filetype plugin indent on    " required
 " 6.7 Snippets
 " 6.8 Polyglot
 " 6.9 Skeletons
+" 7. Coding
+" 7.1 Scala
 
 
 "#####################
@@ -317,3 +320,16 @@ let g:polyglot_disabled = ['latex'] " We use vimtex instead of LaTeX-Box
 "   6.9 Skeletons   ~
 "~~~~~~~~~~~~~~~~~~~~
 let skeletons#autoRegister = 1 " Auto-register for creation of new files
+
+
+"####################
+"     7. Coding     #
+"####################
+"~~~~~~~~~~~~~~~~
+"   7.1 Scala   ~
+"~~~~~~~~~~~~~~~~
+" Easy type inspection
+ nnoremap <localleader>t :EnType<CR>
+
+ autocmd BufWritePost *.scala silent :EnTypeCheck " Typechecking after writing
+

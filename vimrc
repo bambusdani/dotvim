@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Basics
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
@@ -57,6 +58,7 @@ filetype plugin indent on    " required
 " 6.7 Snippets
 " 6.8 Polyglot
 " 6.9 Skeletons
+" 6.10 CtrlP
 " 7. Coding
 " 7.1 Scala
 
@@ -320,6 +322,22 @@ let g:polyglot_disabled = ['latex'] " We use vimtex instead of LaTeX-Box
 "   6.9 Skeletons   ~
 "~~~~~~~~~~~~~~~~~~~~
 let skeletons#autoRegister = 1 " Auto-register for creation of new files
+
+
+"~~~~~~~~~~~~~~~~~
+"   6.10 CtrlP   ~
+"~~~~~~~~~~~~~~~~~
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
+let g:ctrlp_user_command = 'find %s -type f' " MacOSX/Linux
+
+" Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|target|dist)|(\.(git|hg|svn))$',
+  \ 'file': '\v\.(exe|so|dll|DS_Store)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 
 "####################

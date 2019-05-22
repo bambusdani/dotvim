@@ -59,7 +59,6 @@ filetype plugin indent on    " required
 " 6.9 Skeletons
 " 6.10 CtrlP
 " 7. Coding
-" 7.1 Scala
 
 
 "#####################
@@ -342,11 +341,3 @@ let g:ctrlp_custom_ignore = {
 "####################
 "     7. Coding     #
 "####################
-"~~~~~~~~~~~~~~~~
-"   7.1 Scala   ~
-"~~~~~~~~~~~~~~~~
-" Easy type inspection
- nnoremap <localleader>t :EnType<CR>
-
- autocmd BufWritePost *.scala silent :EnTypeCheck " Typechecking after writing
-

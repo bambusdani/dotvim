@@ -59,6 +59,7 @@ filetype plugin indent on    " required
 " 6.9 Skeletons
 " 6.10 CtrlP
 " 7. Coding
+" 7.1 I3WM
 
 
 "#####################
@@ -341,3 +342,10 @@ let g:ctrlp_custom_ignore = {
 "####################
 "     7. Coding     #
 "####################
+"~~~~~~~~~~~~~~~
+"   7.1 I3WM   ~
+"~~~~~~~~~~~~~~~
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end

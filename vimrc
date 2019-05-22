@@ -33,7 +33,6 @@ Plugin 'kristijanhusak/vim-hybrid-material'
 
 " Coding
 Plugin 'lervag/vimtex'        " LaTeX
-Plugin 'ensime/ensime-vim'    " Scala
 Plugin 'sheerun/vim-polyglot' " Polyglot
 
 " All of your Plugins must be added before the following line

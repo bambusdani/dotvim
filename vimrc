@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Basics
+Plugin 'vimwiki/vimwiki'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -19,6 +20,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'pgilad/vim-skeletons'
+Plugin 'davidoc/taskpaper.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
@@ -34,6 +36,7 @@ Plugin 'kristijanhusak/vim-hybrid-material'
 " Coding
 Plugin 'lervag/vimtex'        " LaTeX
 Plugin 'sheerun/vim-polyglot' " Polyglot
+Plugin 'sngn/vim-i3blocks-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,8 +61,10 @@ filetype plugin indent on    " required
 " 6.8 Polyglot
 " 6.9 Skeletons
 " 6.10 CtrlP
+" 6.11 VimWiki
 " 7. Coding
 " 7.1 I3WM
+" 7.2 I3Blocks
 
 
 "#####################
@@ -173,7 +178,7 @@ if has("gui_running")   " Set extra options when running in GUI mode.
     set guitablabel=%M\ %t
 endif
 
-set guifont=Inconsolata:h13
+set guifont=Roboto\ Mono\ Light:h12
 set encoding=utf8
 
 
@@ -197,7 +202,8 @@ let g:syntastic_quiet_messages = {
     \ "level":  "warnings",
     \ "regex": [
         \ '\m\[C03\d\d\]',
-        \ '\mpossible unwanted space at "{"'
+        \ '\mpossible unwanted space at "{"',
+        \ '\mcould not open'
         \]}
 
 
@@ -208,6 +214,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_section_b = '%F'
 
 
 "~~~~~~~~~~~~~~~~~~~
@@ -339,6 +346,15 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 
+"~~~~~~~~~~~~~~~~~~~
+"   6.11 VimWiki   ~
+"~~~~~~~~~~~~~~~~~~~
+let g:vimwiki_list = [{
+  \ 'path': '~/Documents/notes/',
+  \ 'path_html': '~/Documents/notes/public_html/'
+  \ }]
+
+
 "####################
 "     7. Coding     #
 "####################
@@ -348,4 +364,13 @@ let g:ctrlp_custom_ignore = {
 aug i3config_ft_detection
   au!
   au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+
+
+"~~~~~~~~~~~~~~~~~~~
+"   7.2 I3Blocks   ~
+"~~~~~~~~~~~~~~~~~~~
+aug i3blocks_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3blocks/config set filetype=i3blocks
 aug end
